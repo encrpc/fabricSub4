@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Composition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+
+        }
+        canvas {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<br><br><br>
+    <h2></h2>
+  <h1 style="font-family: 'Teko', sans-serif; font-weight: 300; color:#333f48; font-size: 3rem;">
+
+
+
+170 GSM Fabric
+
+
+</h1>
+    <canvas id="fabricChart"></canvas>
+
+
+
+
+
+    <script>
+  setTimeout(() => {
+        location.reload(); // Reloads the page
+    }, 5000); // Refresh every 3 seconds
+        const ctx = document.getElementById('fabricChart').getContext('2d');
+
+        const data = {
+            labels: ['Polyester 92%', 'Spandex 8%'], // Modify this to add/remove sections
+            datasets: [{
+                data: [92, 8], // Modify percentages here
+                backgroundColor: ['#283038', '#a0b5c1', '#586d7d', '#a0b5c1'], // Colors for each section
+                hoverOffset: 10
+            }]
+        };
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+             
+                }
+            }
+        });
+    </script>
+</body>
+</html>
